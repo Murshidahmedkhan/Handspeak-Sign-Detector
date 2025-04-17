@@ -1,5 +1,5 @@
 
-import LandingPage from './Components/LandingPage';
+// import LandingPage from './Components/LandingPage';
 import SignDetector from './Components/SignDetector';
 
 function App() {
