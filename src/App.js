@@ -1,12 +1,14 @@
-
-// import LandingPage from './Components/LandingPage';
-import SignDetector from './Components/SignDetector';
+import { useState } from "react";
+import LandingPage from "./Components/LandingPage";
+import SignDetector from "./Components/SignDetector";
 
 function App() {
+  const [started, setStarted] = useState(false);
+
   return (
-    // <LandingPage/>
-      <SignDetector />
-   
+    <>
+      {started ? <SignDetector /> : <LandingPage onStart={() => setStarted(true)} />}
+    </>
   );
 }
 
