@@ -15,10 +15,8 @@ const SignDetector = () => {
     socketRef.current.onmessage = (event) => {
       const data = JSON.parse(event.data);
       if (data.prediction) {
-        const { action, confidence } = data.prediction;
-        setPredictedText(action);
-        console.log("Prediction:", action, "Confidence:", confidence);
-        // setPredictedText(data.prediction);
+        console.log('safdasdf', data.prediction);
+        setPredictedText(data.prediction);
       }
     };
     return () => socketRef.current.close();
@@ -79,10 +77,9 @@ const SignDetector = () => {
     });
 
     holistic.setOptions({
-      modelComplexity: 1,
-      smoothLandmarks: true,
-      enableSegmentation: false,
-      refineFaceLandmarks: false,
+      // modelComplexity: 1,
+      // smoothLandmarks: true,
+      // enableSegmentation: false,
       minDetectionConfidence: 0.5,
       minTrackingConfidence: 0.5
     });
@@ -116,13 +113,13 @@ const SignDetector = () => {
               autoPlay
               playsInline
               muted
-              className="absolute top-0 left-0 w-full h-full object-cover rounded-xl"
+              className="absolute top-0 left-0 w-full h-full object-cover rounded-xl scale-x-[-1]"
               width="640"
               height="480"
             />
             <canvas
               ref={canvasRef}
-              className="absolute top-0 left-0 w-full h-full rounded-xl"
+              className="absolute top-0 left-0 w-full h-full rounded-xl scale-x-[-1]"
               width="640"
               height="480"
             />
